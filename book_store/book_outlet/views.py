@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Book
-from django.http import Http404
 
 
 def index(request):
@@ -10,8 +9,8 @@ def index(request):
     })
 
 
-def book_detail(request, id):
-    book = get_object_or_404(Book, pk=id)
+def book_detail(request, slug):
+    book = get_object_or_404(Book, slug=slug)
     return render(request, "book_outlet/book_detail.html", {
         "book_title": book.title,
         "author": book.author,
