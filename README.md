@@ -37,5 +37,16 @@ lotr.save()
 ### Viewing object in shell
 
 ~~~python
+from book_outlet.models import Book
 Book.objects.all()
+~~~
+
+### Viewing particular attribute of Book object
+
+~~~python
+from book_outlet.models import Book
+Book.objects.all()[0].title
+Book.objects.all()[0].rating
+Book.objects.all()[0].author
+Book.objects.all()[0].is_bestselling
 ~~~
