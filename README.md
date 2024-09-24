@@ -179,3 +179,34 @@ python manage.py runserver
 Go to /admin/ on localhost do not forget to write trailing forward slash 
 
 Link - [http://localhost:8000/admin/](http://localhost:8000/admin/)
+
+
+### Relations in python shell
+
+Run below command in terminal to launch python shell
+
+~~~cmd
+python manage.py shell
+~~~
+
+Below logic to work with multiple models in python
+
+~~~python
+from book_outlet.models import Book, Author
+
+jkr = Author(first_name="J.K.", last_name="Rowling")
+
+jkr.save()
+
+hp1 = Book(title="Harry Potter 1", rating=5, is_bestselling=True, slug="harry-potter-1", author=jkr)
+
+hp1.save()
+
+harry_potter = Book.objects.get(title="Harry Potter 1")
+
+harry_potter.author
+
+harry_potter.author.first_name
+
+harry_potter.author.last_name
+~~~
