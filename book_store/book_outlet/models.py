@@ -5,7 +5,7 @@ from django.urls import reverse
 
 
 class Book(models.Model):
-    title = models.CharField(max_length=50)
+    title = models.CharField(max_length=50, unique=True)
     rating = models.IntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(5)])
     author = models.CharField(null=True, max_length=50)
