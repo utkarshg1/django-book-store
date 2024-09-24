@@ -159,3 +159,21 @@ print(bestsellers)
 
 print(amazing_bestsellers)
 ~~~
+
+## Admin functionalities
+
+### Create super user
+
+~~~cmd
+python manage.py createsuperuser
+~~~
+
+### Run server
+
+~~~cmd
+python manage.py runserver
+~~~
+
+### Accessing admin
+
+Link - [http://localhost:8000/admin](http://localhost:8000/admin)
