@@ -176,4 +176,6 @@ python manage.py runserver
 
 ### Accessing admin
 
-Link - [http://localhost:8000/admin](http://localhost:8000/admin)
+Go to /admin/ on localhost do not forget to write trailing forward slash 
+
+Link - [http://localhost:8000/admin/](http://localhost:8000/admin/)
