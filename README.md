@@ -210,3 +210,25 @@ harry_potter.author.first_name
 
 harry_potter.author.last_name
 ~~~
+
+## Filter the data 
+
+~~~python 
+from book_outlet.models import Book, Author
+
+books_by_rowling = Book.objects.filter(author__last_name = "Rowling")
+
+print(books_by_rowling)
+
+books2 = Book.objects.filter(author__last_name__contains = "ling")
+
+print(books2)
+
+jkr = Author.objects.get(first_name="J.K.")
+
+jkr.book_set.all()
+
+jkr.book_set.get(title="Harry Potter 1")
+
+jkr.book_set.filter(title__contains = "Potter")
+~~~
